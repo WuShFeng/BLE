@@ -1,0 +1,27 @@
+.label {
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #eee;
+  padding: 40rpx;
+}
+
+.label text:last-child {
+  position: absolute;
+  right: 40rpx;
+}
+scroll-view {
+  position:absolute;
+  bottom: 5%;
+  height: 80%;
+}
+.item{
+  margin: 40rpx;
+  font-size: 3vw;
+}
+.item .name,.RSSI{
+  font-size: 5vw;
+}
+.RSSI{
+  position:absolute;
+  right: 20rpx;
+}

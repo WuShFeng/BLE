@@ -1,0 +1,14 @@
+<view class="label">
+  <text>available: {{available}}</text>
+  <text>discovering: {{discovering}}</text>
+</view>
+<button bind:tap="onTapDiscover">{{discovering?"结束搜索":"开始搜索"}}</button>
+
+<scroll-view scroll-y>
+  <view wx:for="{{devices}}" wx:key="index" class="item">
+    <text class="name">{{item.name||item.localName||"未命名设备"}}</text>
+    <text class="RSSI">RSST {{item.RSSI}}</text>
+    <view class="deviceId">{{item.deviceId}}</view>
+    <view class="advertisServiceUUIDs">{{item.advertisServiceUUIDs||"未知advertisServiceUUIDs"}}</view>
+  </view>
+</scroll-view>
