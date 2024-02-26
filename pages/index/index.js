@@ -47,10 +47,12 @@ Page({
         devices: []
       })
       this._deviceIds = []
-      if (!this.data.available) {
-        this.openBluetoothAdapter();
+      if (this.data.available) {
+        wx.startBluetoothDevicesDiscovery({
+          allowDuplicatesKey: true
+        })
       } else {
-        this.startBluetoothDevicesDiscovery();
+        this.openBluetoothAdapter();
       }
     }
   },
@@ -62,6 +64,27 @@ Page({
         })
       },
       fail: getApp().fail
+    })
+  },
+  onTapDevice(e){
+    let deviceId=e.currentTarget.dataset.deviceid
+    wx.showModal({
+      title: 'Connected or not',
+      content: deviceId,
+      success (res) {
+        if (res.confirm) {
+          getApp().Toast("connecting");
+          wx.createBLEConnection({
+            deviceId,
+            success:()=>{
+              wx.stopBluetoothDevicesDiscovery();
+              wx.navigateTo({
+                url: `/pages/BLE/Services/Services?deviceId=${deviceId}`
+              })
+            }
+          })
+        }
+      }
     })
   }
 })

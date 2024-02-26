@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/BLE/Services/Services",
+    "pages/BLE/control/control"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "WuShF T",
     "navigationBarBackgroundColor": "#ffffff"
   },
   "style": "v2",

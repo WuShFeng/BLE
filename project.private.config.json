@@ -3,5 +3,18 @@
   "projectname": "BLE-T",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/BLE/control/control",
+          "pathName": "pages/BLE/control/control",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }

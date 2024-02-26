@@ -1,0 +1,3 @@
+<view class="service" wx:for="{{services}}" wx:key="index" data-serviceId="{{item}}" bind:tap="onTapService">
+  {{item}}
+</view>

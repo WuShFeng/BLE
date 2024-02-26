@@ -5,7 +5,7 @@
 <button bind:tap="onTapDiscover">{{discovering?"结束搜索":"开始搜索"}}</button>
 
 <scroll-view scroll-y>
-  <view wx:for="{{devices}}" wx:key="index" class="item">
+  <view wx:for="{{devices}}" wx:key="index" class="item" bind:tap="onTapDevice" data-deviceId="{{item.deviceId}}">
     <text class="name">{{item.name||item.localName||"未命名设备"}}</text>
     <text class="RSSI">RSST {{item.RSSI}}</text>
     <view class="deviceId">{{item.deviceId}}</view>

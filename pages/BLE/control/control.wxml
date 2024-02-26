@@ -1,0 +1,41 @@
+<view class="label">
+  <view>
+    notify <text class="uuid">{{notify}}</text>
+  </view>
+  <view>
+    read <text class="uuid">{{read}}</text>
+  </view>
+  <view>
+    write <text class="uuid">{{write}}</text>
+  </view>
+</view>
+<scroll-view scroll-y class="receive">
+  <view class="switch">
+    <text>Str</text>
+    <switch checked="{{isReceiveHex}}" bindchange="onChangeReceive" /><text>Hex</text>
+  </view>
+  <view wx:for="{{receive}}" wx:key="index">
+    <text class="recTime">{{item.time}}: </text>
+    <text class="recValue" hidden="{{isReceiveHex}}">{{item.str}}</text>
+    <text class="recValue" hidden="{{!isReceiveHex}}">{{item.hex}}</text>
+  </view>
+</scroll-view>
+<scroll-view class="send">
+  <view class="switch">
+    <text>Button</text>
+    <switch checked="{{isInput}}" bindchange="onChangeSend" /><text>Input</text>
+  </view>
+  <button class="sendButton" hidden="{{!isInput}}" bind:tap="onTapCommand" data-cmd="{{send}}">Send</button>
+  <textarea value="{{send}}" hidden="{{!isInput}}" class="sendTextarea" bindinput="onInput" />
+  <view class="sendButtons" hidden="{{isInput}}" capture-bind:touchend="onTapCommand" data-cmd="CAR_STOP">
+    <button class="CAR_STOP"  bind:touchstart="onTapCommand" data-cmd="CAR_STOP">停止</button>
+    <button class="CAR_F" bind:touchstart="onTapCommand" data-cmd="CAR_F">前进</button>
+    <button class="CAR_B" bind:touchstart="onTapCommand" data-cmd="CAR_B">后退</button>
+    <button class="CAR_TF" bind:touchstart="onTapCommand" data-cmd="CAR_TF">左转</button>
+    <button class="CAR_TR" bind:touchstart="onTapCommand" data-cmd="CAR_TR">右转</button>
+    <button class="CAR_TSF" bind:touchstart="onTapCommand" data-cmd="CAR_TSF">左移</button>
+    <button class="CAR_TSR" bind:touchstart="onTapCommand" data-cmd="CAR_TSR">右移</button>
+    <button class="STATUS_CONTROL" bind:touchstart="onTapCommand" data-cmd="STATUS_CONTROL">控制</button>
+    <button class="STATUS_PATROL" bind:touchstart="onTapCommand" data-cmd="STATUS_PATROL">巡线</button>
+  </view>
+</scroll-view>

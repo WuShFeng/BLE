@@ -1,0 +1,110 @@
+.label,
+.receive,
+.send {
+  background-color: #eee;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin: 5%;
+  width: auto;
+}
+
+
+.label {
+  height: 150rpx;
+  line-height: 50rpx;
+  font-size: 5vw;
+
+}
+
+.uuid {
+  position: absolute;
+  right: 60rpx;
+  font-size: 3vw;
+}
+
+.receive,
+.send {
+  border-radius: 20rpx;
+  height: 30%;
+}
+
+.switch {
+  position: absolute;
+  top: 0;
+  right: -20rpx;
+  transform: scale(.8);
+}
+
+.sendTextarea {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 85%;
+}
+
+.sendButton {
+  position: absolute;
+  transform: scale(.7);
+  left: -50rpx;
+  top: -10rpx;
+}
+.sendButtons{
+  position:relative;
+  width: 100%;
+  height: 80%;
+  margin: 12% 0 ;
+}
+.sendButtons button {
+  position: absolute;
+  transform: scale(.7);
+  line-height: 70rpx;
+  width: fit-content;
+  height:100rpx;
+}
+
+.CAR_F {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.CAR_B {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+}
+
+.CAR_TSF {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+
+}
+
+.CAR_TSR {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 0;
+}
+.CAR_STOP{
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  left: 0;
+}
+.CAR_TF{
+  left: 0;
+}
+.CAR_TR{
+  right: 0;
+}
+.STATUS_CONTROL{
+  bottom: 0;
+}
+.STATUS_PATROL{
+  bottom: 0;
+  right: 0;
+}
